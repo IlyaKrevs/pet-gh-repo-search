@@ -1,0 +1,63 @@
+.mainContainer {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.headerContainer {
+    height: 80px;
+    display: flex;
+    padding: 19px 0 19px 32px;
+    align-items: center;
+    background-color: #00838F;
+}
+
+
+
+.formContainer {
+    display: flex;
+    gap: 8px;
+}
+
+.inputContainer {
+    width: 912px;
+    border-radius: 4px;
+    background-color: #F2F2F2;
+    z-index: 5;
+}
+
+
+.contentContainer {
+    position: relative;
+
+    display: flex;
+    flex-grow: 1;
+}
+
+.tableContainer {
+    padding: 24px 16px 0 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    flex-grow: 1;
+}
+
+.repoDetail {
+    width: 480px;
+    background-color: #F2F2F2;
+    display: flex;
+}
+
+.spinnerContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background-color: rgba(128, 128, 128, 0.4);
+}
