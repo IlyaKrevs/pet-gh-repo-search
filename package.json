@@ -1,5 +1,6 @@
 {
   "name": "pet-gh-repo-search",
+  "homepage": "https://IlyaKrevs.github.io/pet-gh-repo-search",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
