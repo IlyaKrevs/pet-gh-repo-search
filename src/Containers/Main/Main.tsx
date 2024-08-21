@@ -62,31 +62,19 @@ export const Main: React.FC = () => {
 
         let directionConfig: Partial<SearchRepoListVariables> = {}
 
-        if (order === null || order === 'desc') {
 
-            if (moveDirection === 'moveNext') {
-                directionConfig.first = rowsPerPage
-                directionConfig.after = repoListData?.pageInfo.endCursor
-            } else if (moveDirection === 'movePrev') {
-                directionConfig.last = rowsPerPage
-                directionConfig.before = repoListData?.pageInfo.startCursor
-            } else if (moveDirection === 'notMove') {
-                directionConfig.first = rowsPerPage
-            }
-
-        } else if (order === 'asc') {
-
-            if (moveDirection === 'moveNext') {
-                directionConfig.last = rowsPerPage
-                directionConfig.before = repoListData?.pageInfo.startCursor
-            } else if (moveDirection === 'movePrev') {
-                directionConfig.first = rowsPerPage
-                directionConfig.after = repoListData?.pageInfo.endCursor
-            } else if (moveDirection === 'notMove') {
-                directionConfig.last = rowsPerPage
-            }
-
+        if (moveDirection === 'moveNext') {
+            directionConfig.first = rowsPerPage
+            directionConfig.after = repoListData?.pageInfo.endCursor
+        } else if (moveDirection === 'movePrev') {
+            directionConfig.last = rowsPerPage
+            directionConfig.before = repoListData?.pageInfo.startCursor
+        } else if (moveDirection === 'notMove') {
+            directionConfig.first = rowsPerPage
         }
+
+
+    
 
         newQuery = { searchQuery: makeInput, ...directionConfig }
         return newQuery
