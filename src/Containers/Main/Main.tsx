@@ -71,10 +71,8 @@ export const Main: React.FC = () => {
             directionConfig.before = repoListData?.pageInfo.startCursor
         } else if (moveDirection === 'notMove') {
             directionConfig.first = rowsPerPage
+            directionConfig.after = undefined
         }
-
-
-    
 
         newQuery = { searchQuery: makeInput, ...directionConfig }
         return newQuery
@@ -124,6 +122,7 @@ export const Main: React.FC = () => {
                 setOrder('desc')
             }
         }
+        setCurrentPage(0)
         moveDirection.current = 'notMove'
     }
 

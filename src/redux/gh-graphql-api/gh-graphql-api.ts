@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { SearchRepoListResponse, SearchRepoListVariables, GetDetailsRepoResponse, GetDetailsRepoVariables } from "./types";
 import { graphqlSearchRepoListQuery, graphqlGetDetailsRepository } from "./queries";
 
-const myGhAccessToken = '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'
+const myGhAccessToken = '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'
 
 const myBaseQuery = fetchBaseQuery({
     baseUrl: 'https://api.github.com/graphql',
