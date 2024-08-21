@@ -44,13 +44,6 @@ export const Main: React.FC = () => {
     }, [canMakeReq, input, order, orderBy, rowsPerPage, currentPage])
 
 
-    // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-    //             GIT HUB GRAPH-QL NOT SUPPORTED param  'sort by : asc/desc'                        //
-
-    //          only support 'sort by stars/forks/updated etc. with default sort => DESC             //
-
-    // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     function generateQueryParam(moveDirection: MoveDirection) {
 
         let newQuery: Partial<SearchRepoListVariables> = {}
@@ -64,7 +57,7 @@ export const Main: React.FC = () => {
         let makeInput = input
 
         if (orderBy !== null) {
-            makeInput = makeInput + ` sort:${orderBy}`
+            makeInput = makeInput + ` sort:${orderBy}-${order === 'desc' ? 'desc' : 'asc'}`
         }
 
         let directionConfig: Partial<SearchRepoListVariables> = {}
@@ -136,14 +129,13 @@ export const Main: React.FC = () => {
         if (value !== orderBy) {
             setOrderBy(value)
             setOrder('desc')
+        } else {
+            if (order === 'desc') {
+                setOrder('asc')
+            } else {
+                setOrder('desc')
+            }
         }
-        // } else {                              github GRAPH-QL not supported ascendio sort
-        //     if (order === 'desc') {
-        //         setOrder('asc')
-        //     } else {
-        //         setOrder('desc')
-        //     }
-        // }
         moveDirection.current = 'notMove'
     }
 
