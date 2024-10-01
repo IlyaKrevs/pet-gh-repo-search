@@ -1,4 +1,5 @@
 # pet-gh-repo-search
+https://ilyakrevs.github.io/pet-gh-repo-search/
 
 ## Stack:
 - typescript
